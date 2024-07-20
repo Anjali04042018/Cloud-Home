@@ -22,8 +22,7 @@ const LoginPage = () =>{
     const handleSubmit = () =>{
         const validation = true;
         if(validation){
-            console.log('login called')
-
+            console.log('login called');
             login({email,password});
         }else{
             alert("Validation Failed");

@@ -1,5 +1,6 @@
 const UserModel = require("../model/userModel");
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+
 const getUserByEmail = async (email) =>{
     const user = await UserModel.findOne({ email });
     return user;
@@ -8,13 +9,14 @@ const getUserByEmail = async (email) =>{
 const generateJWTToken = (obj) =>{
     const token = jwt.sign(
         {
-            exp:Math.floor(Date.now()),
+            exp:Math.floor(Date.now()/ 1000) + 60 * 60,
             data: obj,
         },
         process.env.JWT_SECRET_KEY
     );
     return token;
 };
+
 const signup =async (req,res) =>{
         try{
     const { email,password } = req.body;
@@ -89,14 +91,14 @@ const login = async (req,res) =>{
     if(!isCorrect){
         res.status(400).json({
             status:"fail",
-            message:"Invalid password",
+            message:"Incorrect password",
             data:{},
         });
         return;
     }
     res.status(200);
     res.json({
-        status: "Success",
+        status: "success",
         data:{
             user:{
                 email:user.email,

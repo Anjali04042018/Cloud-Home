@@ -1,29 +1,28 @@
 import { useSelector } from "react-redux";
 
 const useGenerateNewOtp = () => {
+    const { token } = useSelector((e) => e.auth);
 
-    const {token} = useSelector((e) =>e.auth);
-    const generateNewOtp = async () =>{
-        try{
-
-            const res = await fetch(`${process.env.BACKEND_URL}/api/v1/otp/generate`,{
-                headers:{
-                    Authorization:`Bearer ${token}`,
+    const generateNewOtp = async () => {
+        try {
+            const res = await fetch(`${process.env.BACKEND_URL}/api/v1/otp/generate`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
                 },
             });
-              
             const data = await res.json();
-            if(res.status === "success"){
+
+            if (data.status === "Success") {
                 alert(data.message);
-            }else{
+            } else {
                 alert(data.message);
             }
-        }
-        catch(err){
+        } catch (err) {
             alert("Error: " + err.message);
         }
     };
-    return {generateNewOtp};
+
+    return { generateNewOtp };
 };
 
 export default useGenerateNewOtp;

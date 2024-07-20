@@ -12,11 +12,11 @@ const AppRouter = () =>{
     const router = createBrowserRouter([
         {
             path:"/login",
-            element: isAuthorized ? <Navigate to="/" /> :<LoginPage/>
+            element: isAuthorized ? <Navigate to="/" /> :<LoginPage/>,
         },
         {
             path:"/signup",
-            element: isAuthorized ? <Navigate to="/" /> :<SignupPage/>
+            element: isAuthorized ? <Navigate to="/" /> :<SignupPage/>,
         },
         {
             path:"/otp",

@@ -29,13 +29,13 @@ const otpSchema = new mongoose.Schema({
     },
 });
 
-userSchema.methods.verifyOtp =  (otp, hashedOtp) =>{
-    return bcrpt.compare(otp,hashedOtp);
+otpSchema.methods.verifyOtp =  (otp, hashedOtp) =>{
+    return bcrypt.compare(otp,hashedOtp);
 }
 
-userSchema.pre('save',async function(next){
+otpSchema.pre("save",async function(next){
     if(this.isModified("otp")){
-        const hashedOtp = await bcrpt.hash(this.otp,12);
+        const hashedOtp = await bcrypt.hash(this.otp,12);
         this.otp = hashedOtp;
         next();
     }else{

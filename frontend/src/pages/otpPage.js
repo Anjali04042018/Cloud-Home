@@ -42,7 +42,7 @@ const OtpPage = () =>{
         <button onClick={handleSubmit}>Verify</button>
     </div>
     </>
-   )
-}
+   );
+};
 
 export default OtpPage;

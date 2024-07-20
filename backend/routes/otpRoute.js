@@ -5,5 +5,4 @@ const otpRouter = express.Router();
 
 otpRouter.get("/generate", generateOtp);
 
-
 module.exports = otpRouter;

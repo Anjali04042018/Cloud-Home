@@ -1,12 +1,9 @@
 import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
 import { appLogin } from "../store/slices/authSlice";
 
 const useLogin = () =>{
-    // const navigate = useNavigate();
     const dispatch = useDispatch();
     const login =async ({email,password}) =>{
-        console.log('login called')
         try{
             const res = await fetch(`${process.env.BACKEND_URL}/api/v1/auth/login`,{
                 method: "POST", 
@@ -17,7 +14,7 @@ const useLogin = () =>{
             });
             const data = await res.json();
             console.log(data);
-            if(data.status === "Success"){
+            if(data.status === "success"){
                 // navigate(`/`);
                 dispatch(appLogin(data));
             }else{
@@ -28,7 +25,7 @@ const useLogin = () =>{
             alert("Login error: " + err.message);
         }
     };
-    return {login};
+    return { login };
 };
 
 export default useLogin;

@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import { Provider } from 'react-redux';
 import appStore from './src/store/appStore';
 import AppRouter from './appRouter';
-import "./globalStyle.css"
+import "./globalStyle.css";
+
 const App = () =>{
     return (
         <Provider store={appStore}>

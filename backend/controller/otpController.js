@@ -1,14 +1,40 @@
-const nodemailer = require("nodemailer");
+// const nodemailer = require("nodemailer");
 
-const sendOTPMail = async(email,otp) =>{
-    let mailer = nodemailer.createTransport({
+// const sendOTPMail = async(email,otp) =>{
+//     try{
+//     let mailer = nodemailer.createTransport({
+//         service: "gmail",
+//         secure: true,
+//         port: 465,
+//         auth: {
+//             user: "anjaligp1210@gmail.com",
+//             pass: "Anjali@10",
+//         },
+//     });
+//     const response = await mailer.sendMail({
+//         from: "anjali", 
+//         to: email,
+//         subject: "OTP", // OTP verification for your account
+//         html: `
+//             <html>
+//                 <body>
+//                     <h1> Your OTP for Cloud Home APP is </h1>
+//                     <h1> ${otp} </h1>
+//                 </body>
+//             </html>
+//         `,
+//     });
+//     console.log(response);
+//     return true;
+// }
+// catch(err){
+//     console.log("--------------------------------");
+//         console.log(err);
+//         console.log("--------------------------------");
 
-    });
-    const response = await mailer.sendMail({
-        
-    })
-
-}
+//         return false;
+// }
+// };
 
 const generateOtp = async (req,res) =>{
     try{
