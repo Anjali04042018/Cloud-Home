@@ -1,9 +1,9 @@
 require("dotenv").config();
 require("./config/db.js")
 const authRouter = require("./routes/authRoutes.js")
+const otpRouter = require("./routes/otpRoute.js");
 const express = require("express");
 const cors = require("cors");
-const otpRouter = require("./routes/otpRoute.js");
 const verifyToken = require("./middlewares/verifyToken.js");
 
 const app = express();
