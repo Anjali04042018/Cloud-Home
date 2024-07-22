@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const OtpModel = require("../model/otpSchema");
+const UserModel = require("../model/userModel");
 
 const sendOTPMail = async(email,otp) =>{
     try{
@@ -45,7 +46,7 @@ const generateOtp = async (req,res) =>{
         
         const {email,_id} = req.user;
         // console.log(req.user);
-        const restrictedTimeForOTP = 10 * 60*1000;
+        const restrictedTimeForOTP = 10 * 60*1000;  // Miliseconds
         const sentOTPMail = await OtpModel.findOne({
             email, 
             createdAt:{ 
@@ -107,4 +108,58 @@ const generateOtp = async (req,res) =>{
     }
 };
 
-module.exports = { generateOtp };
+const verifyOtp = async (req,res) =>{
+    try{
+
+        const { otp } = req.body;
+        const { email } = req.user;
+    
+        const restrictedTimeForOTP = 10 * 60*1000;  // Miliseconds
+        const sentOTPMail = await OtpModel.findOne({
+            email, 
+            createdAt:{ 
+                $gte: Date.now() - restrictedTimeForOTP,
+             
+        },
+    });
+    if(!sentOTPMail){
+        res.status(404);
+        res.json({
+            status:"fail",
+            message:"Verification failed. Please generate new OTP ",
+        })
+        return;
+    }
+    const hashedOtp = sentOTPMail.otp;
+    const isCorrect = sentOTPMail.verifyOtp(otp + "",hashedOtp);
+    
+    if(!isCorrect){
+        res.status(400);
+        res.json({
+            status:"fail",
+            message:"Incorrect OTP ...",
+        });
+        return;
+    }
+    await UserModel.findOneAndUpdate({email},{isEmailVerified: true});
+    
+    res.status(200);
+    res.json({
+        status:"success",
+        message:"Verification Successful",
+        data:{},
+    });
+    }catch(err){
+        console.log("--------------------");
+        console.log(err);
+        console.log("--------------------");
+        res.status(500);
+        res.json({
+            status:"fail",
+            message:"Internal server Error",
+        });
+    }
+
+}
+
+module.exports = { generateOtp,verifyOtp };
