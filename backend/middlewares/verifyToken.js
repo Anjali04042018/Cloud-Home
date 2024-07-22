@@ -1,42 +1,3 @@
-// const jwt = require("json")
-// const verifyToken = () =>{
-//     const {authentication} = req.headers;
-//     if(!authentication){
-//         res.status(401).json({
-//             status:"fail",
-//             message:"Unauthorized",
-//             data:{},
-//         });
-//         return;
-//     }
-
-//     const token = authentication?.split(" ")?.[1];
-//     if(!token){
-//         res.status(401).json({
-//             status:"fail",
-//             message:"Unauthorized",
-//             data:{},
-//         })
-//         return;
-//     }
-
-// jwt.verify(token, process.env.JWT_SECRET_KEY,(err,decoded) =>{
-//     if(err){
-//         res.status(401).json({
-//             status:"fail",
-//             message:"Unauthorized",
-//             data:{},
-//         });
-//     }else{
-//         console.log("--->",decoded);
-//     }
-// }
-// });
-// };
-
-
-// module.exports = verifyToken;
-
 const jwt = require("jsonwebtoken");
 
 const verifyToken = (req, res, next) => {
@@ -59,7 +20,7 @@ const verifyToken = (req, res, next) => {
         });
         return;
     }
-
+    // console.log(token);
     jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
         if (err) {
             console.log(err);
@@ -69,7 +30,8 @@ const verifyToken = (req, res, next) => {
                 data: {},
             });
         } else {
-            req.user = { email: decoded.data.email };
+            console.log(decoded)
+            req.user = { email: decoded.data.email, _id: decoded.data._id };
             next();
         }
     });

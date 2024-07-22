@@ -1,3 +1,4 @@
+
 import { useSelector } from "react-redux";
 
 const useGenerateNewOtp = () => {
@@ -12,7 +13,7 @@ const useGenerateNewOtp = () => {
             });
             const data = await res.json();
 
-            if (data.status === "Success") {
+            if (data.status === "success") {
                 alert(data.message);
             } else {
                 alert(data.message);

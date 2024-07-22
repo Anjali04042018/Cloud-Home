@@ -16,7 +16,7 @@ app.get("/",(req,res) =>{
 app.use("/api/v1/auth",authRouter);
 
 app.use(verifyToken);
-app.use("api/v1/otp",otpRouter)
+app.use("/api/v1/otp",otpRouter)
 
 app.listen(process.env.PORT, () =>{
     console.log("-------------App Listen on port " + process.env.PORT + " ---------------")
