@@ -33,6 +33,9 @@ const fileFolderSchema = new mongoose.Schema({
         ref:"FileFolder",
     },
 ],
+mataData:{
+    type:Object,
+},
 },
 {   timestamps:true }
 );
