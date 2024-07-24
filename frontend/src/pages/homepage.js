@@ -81,7 +81,7 @@ const HomePage = () => {
                 <div>
                     {showCreateFolder && (
                         <div>
-                            <input value={newFolder} onChange={(e) =>setNewFolder(e.target.value)}/>
+                            <input value={newFolder} onChange={(e) =>setNewFolder(e.target.value)} placeholder="Please enter folder name"/>
                             <button onClick={handleCreateFolder}>Create</button>
                             <button onClick={()=>setShowCreateFolder(false)}>Cancel</button>
                          </div>   

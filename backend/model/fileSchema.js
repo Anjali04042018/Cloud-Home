@@ -1,45 +1,46 @@
 const mongoose = require("mongoose");
-const {ObjectId} = mongoose.Schema.Types;
 
+const { ObjectId } = mongoose.Schema.Types;
 
-const fileFolderSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required: true
+const fileFolderSchema = new mongoose.Schema(
+    {
+        name: {
+            type: String,
+            required: true,
+        },
+        userId: {
+            type: ObjectId,
+            required: true,
+            ref: "Users",
+        },
+        sharedWith: [
+            {
+                type: ObjectId,
+                ref: "Users",
+            },
+        ],
+        type: {
+            type: String, // file, folder
+            required: true,
+        },
+        link: String,
+        parentId: {
+            type: ObjectId,
+            ref: "FileFolder",
+        },
+        children: [
+            {
+                type: ObjectId,
+                ref: "FileFolder",
+            },
+        ],
+        metaData: {
+            type: Object
+        }
     },
-    userId:{
-        type:ObjectId,
-        required:true,
-        ref:"Users",
-    },
-    sharedWith:[
-        {
-        type:ObjectId,
-        ref:"Users"
-    },
-],
-    type:{
-        type:String,  // file,folder
-        required:true,
-    },
-    link:String,
-    parentId:{
-        type:ObjectId,
-        ref:"FileFolder",
-    },
-    children:[
-        {
-        type:ObjectId,
-        ref:"FileFolder",
-    },
-],
-mataData:{
-    type:Object,
-},
-},
-{   timestamps:true }
+    { timestamps: true }
 );
 
-const FileFolderModel = mongoose.model("FileFolder",fileFolderSchema);
+const FileFolderModel = mongoose.model("FileFolder", fileFolderSchema);
 
 module.exports = FileFolderModel;

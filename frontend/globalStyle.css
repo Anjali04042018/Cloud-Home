@@ -50,3 +50,27 @@
         width: 70px;
     }
 }
+.homepage-main-container{
+    border: 2px solid black;
+    padding: 10px;
+}
+.homepage-main-container h3{
+   text-align: center;
+}
+.homepage-main-container button{
+    padding: 10px;
+    margin: 20px;
+    background-color: rgb(49, 197, 172);
+    border-radius: 15px;
+    border: none;
+}
+.homepage-main-container button:hover{
+    background-color: pink;
+}
+
+.file-upload-input{
+    
+}
+.homepage-main-container input{
+    padding: 20px;
+}
