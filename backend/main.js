@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("./config/db.js")
+const path = require("path");
 const authRouter = require("./routes/authRoutes.js")
 const otpRouter = require("./routes/otpRoute.js");
 const folderRouter = require("./routes/folderRoutes.js");
@@ -12,6 +13,8 @@ const fileRouter = require("./routes/fileRoute.js");
 const app = express();
 app.use(cors({origin:true}));
 app.use(express.json())
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/",(req,res) =>{
     res.send("App is Running ")

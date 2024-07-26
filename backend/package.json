@@ -1,9 +1,10 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "nodemon main.js"
+    "start": "node main.js",
+    "build": "parcel build index.html --dist-dir ../backend/public"
   },
   "author": "",
   "license": "ISC",

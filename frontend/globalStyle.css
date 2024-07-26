@@ -167,28 +167,6 @@ p {
     background: rgba(255, 255, 255, 0.15);
 }
 
-.homepage-main-container{
-    padding: 10px;
-}
-.homepage-main-container h2{
-   text-align: center;
-
-}
-.homepage-main-container button{
-    padding: 10px;
-    margin: 20px;
-
-    background-color: lightblue;
-    border-radius: 15px;
-    border: none;
-}
-.homepage-main-container button:hover{
-    background-color: pink;
-}
-.homepage-main-container input{
-    padding: 20px;
-}
-
 
 .signup-page {
     display: flex;
@@ -340,45 +318,41 @@ form {
 } 
 
 
-
-.homepage-main-container {
-    padding: 20px;
+.homepage-main-container{
+    padding: 10px;
+    width: 50%;
+    
 }
+.homepage-main-container h2{
+   text-align: center;
 
-.create-folder-btn {
-    margin-right: 10px;
 }
-
-.file-upload-input {
-    margin-top: 10px;
+.homepage-main-container button{
+    padding: 10px;
+    margin: 20px;
+    background-color: lightblue;
+    border-radius: 15px;
+    border: none;
+    width: 15%;
 }
-
-.breadcrumb {
-    display: flex;
-    padding: 24px;
-    gap: 24px;
-    list-style-type: none;
+.homepage-main-container button:hover{
+    background-color: pink;
 }
+.homepage-main-container input{
+    padding: 10px;
+    border-radius: 10px;
 
-.breadcrumb li {
-    cursor: pointer;
-    color: blue;
 }
-
-.create-folder-container {
-    margin-top: 10px;
-}
-
-.folder-name-input {
-    margin-right: 10px;
-}
-
 .folder-container {
-    display: flex;
-    flex-wrap: wrap;
+    border: 1px solid black;
+    margin: 10px 100px;
+    width: 40%;
+    text-align: center;
 }
-
-.folder-item {
+.folder-container p{
+    color: #000;
+}
+/* .folder-item {
     background-color: yellow;
     border: 1px solid gray;
     border-radius: 8px;
@@ -386,4 +360,4 @@ form {
     padding: 8px 16px;
     margin: 8px 16px;
     cursor: pointer;
-}
+} */
