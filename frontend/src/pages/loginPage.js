@@ -64,11 +64,10 @@
 
 // export default LoginPage;
 
-
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 import useLogin from "../hooks/useLogin";
 import Navbar from "../components/navbar";
-// import Navbar from "../components/Navbar";
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
@@ -113,6 +112,7 @@ const LoginPage = () => {
                             <label>Enter your Password</label>
                         </div>
                         <button className="login-btn" type="submit">Login</button>
+                        <Link to="/signup" className="signup-link">Don't have an account? Sign up</Link>
                     </form>
                 </div>
             </div>
