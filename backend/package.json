@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js",
-    "build": "parcel build index.html --dist-dir ../backend/public"
+    "start": "node main.js"
   },
   "author": "",
   "license": "ISC",
