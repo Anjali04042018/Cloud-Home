@@ -31,19 +31,28 @@ const OtpPage = () =>{
    return(
     <>
     <Navbar/>
-    <div className="otp-page-container">
-        <p>Email: {email}</p>
-         <div className="otp-input-container">
+    <div className="otp-page">
+    <div className="otp-wrapper">
+        <h1>OTP Verification Page</h1>
+        
+        <p>Enter the code from the Email we sent to </p> 
+        {/* <p>Email: {email}</p> */}
+         <p><b>{email}</b></p>
+         <div className="input-field">
         <input maxLength={4} type="text" value={otp} onChange={(e) => setOtp(e.target.value)}/>
-        <div className="otp-column c1"/>
+        <label>Enter your OTP</label>
+       
+        {/* <div className="otp-column c1"/>
         <div className="otp-column c2"/>
         <div className="otp-column c3"/>
-        <div className="otp-column c4"/>
+        <div className="otp-column c4"/> */}
 
 
         </div>
-        <button onClick={handleSubmit}>Verify</button>
+        <button className="otp-btn" onClick={handleSubmit}>Verify OTP</button>
     </div>
+    </div>
+
     </>
    );
 };

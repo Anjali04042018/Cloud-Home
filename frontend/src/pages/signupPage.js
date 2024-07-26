@@ -29,13 +29,29 @@ const SignupPage = () =>{
     return(
         <>
        <Navbar/>
+       <div className="signup-page">
+        <div className="signup-wrapper">
+            
+                <h1>Sign Up Page</h1>
     <div style={SignupPageStyles}>
+        <div className="input-field">
         <input type="text" value={email} onChange={(e) =>setEmail(e.target.value)}/>
+        <label>Enter your email</label>
+        </div>
+        <div className="input-field">
         <input type="password" value={password} onChange={(e) =>setPassword(e.target.value)}/>
-        <button onClick={handleSubmit}>Sign Up</button>
+        <label>Enter your Password</label>
+        </div>
+        <button className="login-btn" onClick={handleSubmit}>Sign Up</button>
+        
+    </div>
+    
+    </div>
     </div>
     </>
     )
 }
 
 export default SignupPage;
+
+

@@ -3,9 +3,17 @@
     align-items: center;
     justify-content:space-between ;
     padding: 24px;
-    background-color: bisque;
+    background-color:blanchedalmond;
 }
 
-button{
-    background-color: brown;
+.navbar-container button{
+    background-color:rgb(129, 208, 235);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.navbar-container button:hover{
+    background-color: black;
+    color:  white;
 }

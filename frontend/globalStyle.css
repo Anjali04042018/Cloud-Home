@@ -1,39 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+     font-family: "Open Sans", sans-serif;
+}
+/*
 .otp-page-container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 24px;
-    padding: 24px;
-    background-color: bisque;
-    gap: 24px;
+    /* margin: 24px; */
+    /*padding: 24px;*/
+    /* background-color: bisque; */
+   /* gap: 24px;
     border-radius: 8px;
+   
 }
 
+.otp-page-container h1{
+    text-align: center;
+}
 
 .otp-input-container{
     position: relative;
     margin-left: 70px;
     
     input{
-        padding: 8px;
+         padding: 8px; 
         font-size: 24px;
-        letter-spacing: 48px;
+        letter-spacing: 40px;
         width: 280px !important;
         border: none;
         outline: none;
     }
 
-    .otp-column{
+    /* .otp-column{
         position: absolute;
         top: 0;
 
         height: 44px;
         width: 24px;
         background-color: blanchedalmond;
-    }
+    } */
 
-    .c1{
+    /* .c1{
         left: 34px;
     }
 
@@ -48,29 +61,329 @@
     .c4{
         left: 216px;
         width: 70px;
-    }
+    } 
 }
+
+*/
+
+.otp-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 10px;
+    position: relative;
+}
+
+.otp-page::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.otp-wrapper {
+    width: 400px;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+p {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    position: relative;
+    border-bottom: 2px solid #ccc;
+    margin: 15px 0;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.15s ease;
+}
+
+.input-field input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+    font-size: 0.8rem;
+    top: 10px;
+    transform: translateY(-120%);
+}
+
+.otp-btn {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+.otp-btn:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+}
+
 .homepage-main-container{
-    border: 2px solid black;
     padding: 10px;
 }
-.homepage-main-container h3{
+.homepage-main-container h2{
    text-align: center;
+
 }
 .homepage-main-container button{
     padding: 10px;
     margin: 20px;
-    background-color: rgb(49, 197, 172);
+
+    background-color: lightblue;
     border-radius: 15px;
     border: none;
 }
 .homepage-main-container button:hover{
     background-color: pink;
 }
-
-.file-upload-input{
-    
-}
 .homepage-main-container input{
     padding: 20px;
+}
+
+
+.signup-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 10px;
+    position: relative;
+}
+
+.signup-page::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.signup-wrapper {
+    width: 400px;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.input-field {
+    position: relative;
+    border-bottom: 2px solid #ccc;
+    margin: 15px 0;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.15s ease;
+}
+
+.input-field input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+    font-size: 0.8rem;
+    top: 10px;
+    transform: translateY(-120%);
+}
+
+.signup-btn {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+.signup-btn:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+
+  .login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 10px;
+    position: relative;
+}
+
+.login-page::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.login-wrapper {
+    width: 400px;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+.login-btn {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+.login-btn:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+} 
+
+
+
+.homepage-main-container {
+    padding: 20px;
+}
+
+.create-folder-btn {
+    margin-right: 10px;
+}
+
+.file-upload-input {
+    margin-top: 10px;
+}
+
+.breadcrumb {
+    display: flex;
+    padding: 24px;
+    gap: 24px;
+    list-style-type: none;
+}
+
+.breadcrumb li {
+    cursor: pointer;
+    color: blue;
+}
+
+.create-folder-container {
+    margin-top: 10px;
+}
+
+.folder-name-input {
+    margin-right: 10px;
+}
+
+.folder-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.folder-item {
+    background-color: yellow;
+    border: 1px solid gray;
+    border-radius: 8px;
+    width: fit-content;
+    padding: 8px 16px;
+    margin: 8px 16px;
+    cursor: pointer;
 }
