@@ -322,12 +322,42 @@ form {
 
 
 .homepage-main-container{
-    padding: 10px;
-    width: 50%;
-    
+    /* padding: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 10px;
+    position: relative;
 }
-.homepage-main-container h2{
+.homepage-main-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+.homepage-wrapper {
+    width: 80%;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+.homepage-main-container h1{
+    padding: 10px;
    text-align: center;
+   color: #fff;
 
 }
 .homepage-main-container button{
@@ -341,26 +371,28 @@ form {
 .homepage-main-container button:hover{
     background-color: pink;
 }
+.homepage-main-container ul{
+    color: #fff;
+}
 .homepage-main-container input{
     padding: 10px;
     border-radius: 10px;
+    background-color: #ccc;
+}
 
+
+.create-folder input{
+   width: 30%;
 }
 .folder-container {
-    border: 1px solid black;
-    margin: 10px 100px;
-    width: 40%;
+    margin: 10px 300px;
+    /* width: 40%; */
     text-align: center;
 }
 .folder-container p{
     color: #000;
+    font-weight: 600;
 }
-/* .folder-item {
-    background-color: yellow;
-    border: 1px solid gray;
-    border-radius: 8px;
-    width: fit-content;
-    padding: 8px 16px;
-    margin: 8px 16px;
-    cursor: pointer;
-} */
+.signup-link a{
+    color: rgb(25, 173, 193); 
+}

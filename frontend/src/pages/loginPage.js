@@ -112,7 +112,8 @@ const LoginPage = () => {
                             <label>Enter your Password</label>
                         </div>
                         <button className="login-btn" type="submit">Login</button>
-                        <Link to="/signup" className="signup-link">Don't have an account? Sign up</Link>
+                        <br />
+                        <Link to="/signup" className="signup-link">Don't have an account? <a href="#">Sign up</a> </Link>
                     </form>
                 </div>
             </div>

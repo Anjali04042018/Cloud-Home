@@ -35,13 +35,20 @@ const createFileDocumentInMongoDB = async (req, res) => {
     }
 };
 
-const uploadFileToCloudinary = async (file) => {
+const uploadFileToCloudinary = async (req,file) => {
     try {
-        const result = await cloudinary.uploader.upload(file.metaData.multer.path, {
+        // const result = await cloudinary.uploader.upload(file.metaData.multer.path, {
+        //     folder: `Cloud-Home/${file.userId}/${file.parentId}`,
+        //     timeout: 60000,
+        // });
+        const b64 = Buffer.from(req.file.buffer).toString("base64");
+        let dataURI = "data:" + req.file.mimetype + ";base64," + b64;
+        const result =  await cloudinary.uploader.upload(dataURI, {
+            resource_type: "auto",
             folder: `Cloud-Home/${file.userId}/${file.parentId}`,
             timeout: 60000,
-        });
-
+          });
+    
         try {
             await FileFolderModel.findByIdAndUpdate(file._id, {
                 link: result.secure_url || result.url,
@@ -82,7 +89,7 @@ const createFile = async (req, res) => {
     try {
         const documentCreated = await createFileDocumentInMongoDB(req, res);
         if (documentCreated) {
-            const isFileUploadedToCloudinary = await uploadFileToCloudinary(documentCreated);
+            const isFileUploadedToCloudinary = await uploadFileToCloudinary(req,documentCreated);
             if (isFileUploadedToCloudinary) {
                 deleteFileFromServer(documentCreated);
             }

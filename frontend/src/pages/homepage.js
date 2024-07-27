@@ -65,10 +65,11 @@ const HomePage = () => {
         <div>
             <Navbar/>
             <div className="homepage-main-container">
-                <h2>Welcome to cloud Home</h2>
+                <div className="homepage-wrapper">
+                <h1>Welcome to cloud Home</h1>
                 <button onClick={handleAllowCreateFolder}>Create Folder</button>
                 {/* <button>Upload File</button> */}
-                <input className="file-upload-input" ref={inputRef} type="file" onChange={handleFileUpload} />
+                <input  ref={inputRef} type="file" onChange={handleFileUpload} />
                 <ul style={{display:"flex", padding:"24px",gap:"24px"}}>
                     {/* <li>Cloud Home</li> */}
                     {folderStructure.flatMap((elem,idx) =>{
@@ -77,7 +78,6 @@ const HomePage = () => {
                     })}
             
                 </ul>
-                
                 <div>
                     {showCreateFolder && (
                         <div className="create-folder">
@@ -103,6 +103,7 @@ const HomePage = () => {
                            <p> {elem.name}</p>
                             </div>
                     })}
+                </div>
                 </div>
             </div>
         </div>
