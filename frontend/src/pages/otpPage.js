@@ -42,10 +42,10 @@ const OtpPage = () =>{
         <input maxLength={4} type="text" value={otp} onChange={(e) => setOtp(e.target.value)}/>
         <label>Enter your OTP</label>
        
-        {/* <div className="otp-column c1"/>
+        <div className="otp-column c1"/>
         <div className="otp-column c2"/>
         <div className="otp-column c3"/>
-        <div className="otp-column c4"/> */}
+        <div className="otp-column c4"/>
 
 
         </div>

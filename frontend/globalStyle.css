@@ -1,71 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-     font-family: "Open Sans", sans-serif;
-}
-/*
-.otp-page-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    /* margin: 24px; */
-    /*padding: 24px;*/
-    /* background-color: bisque; */
-   /* gap: 24px;
-    border-radius: 8px;
-   
-}
-
-.otp-page-container h1{
-    text-align: center;
-}
-
-.otp-input-container{
-    position: relative;
-    margin-left: 70px;
-    
-    input{
-         padding: 8px; 
-        font-size: 24px;
-        letter-spacing: 40px;
-        width: 280px !important;
-        border: none;
-        outline: none;
-    }
-
-    /* .otp-column{
-        position: absolute;
-        top: 0;
-
-        height: 44px;
-        width: 24px;
-        background-color: blanchedalmond;
-    } */
-
-    /* .c1{
-        left: 34px;
-    }
-
-    .c2{
-        left: 94px;
-    }
-
-    .c3{
-        left: 156px;
-    }
-
-    .c4{
-        left: 216px;
-        width: 70px;
-    } 
-}
-
-*/
-
 .otp-page {
     display: flex;
     align-items: center;
@@ -81,7 +15,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000;
+     background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbnFMFz_PC5XKL47zTI-alZTld2w5atgRkuQ&s");
     background-position: center;
     background-size: cover;
     z-index: -1;
@@ -165,8 +99,8 @@ p {
     color: #fff;
     border-color: #fff;
     background: rgba(255, 255, 255, 0.15);
-}
-
+} 
+ 
 
 .signup-page {
     display: flex;
@@ -183,7 +117,7 @@ p {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000;
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbnFMFz_PC5XKL47zTI-alZTld2w5atgRkuQ&s") no-repeat center center;
     background-position: center;
     background-size: cover;
     z-index: -1;
@@ -280,7 +214,7 @@ h1 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbnFMFz_PC5XKL47zTI-alZTld2w5atgRkuQ&s") no-repeat center center;
     background-position: center;
     background-size: cover;
     z-index: -1;
@@ -322,11 +256,11 @@ form {
 
 
 .homepage-main-container{
-    /* padding: 10px;
+    padding: 10px;
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000; */
+    background: url("https://www.codingnepalweb.com/demos/create-glassmorphism-login-form-html-css/hero-bg.jpg"), #000;
     display: flex;
     align-items: center;
     justify-content: center;
